@@ -2,6 +2,7 @@
 echo "Install Roblox (this only works on Ubuntu-based distros) ? [Y/n]"
 read START
 if [ $START = n ]
+then
 	exec echo "Aborting..."
 else
 
@@ -24,7 +25,7 @@ echo "Step 6: Install Updates"
 sudo apt upgrade -y
 clear
 echo "Step 7: Install Wine"
-sudo apt install --install-recommends winehq-devel
+sudo apt install -y --install-recommends winehq-devel
 clear
 echo "Step 8: Install Dependencies"
 sudo apt install -y git python3-pip python3-setuptools python3-wheel python3-dev pkg-config libcairo2-dev gtk-update-icon-cache desktop-file-utils xdg-utils libgirepository1.0-dev gir1.2-gtk-3.0
@@ -48,4 +49,6 @@ sudo apt install vim
 clear
 echo "Step 15 is manual. You need to put 
 /home/username/wine-tkg-staging-fsync-git-6.15.r0.g4b6879f3/bin/wine between the quotes"
+read
 vim ~/.config/brinkervii/grapejuice/user_settings.json
+fi
