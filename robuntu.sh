@@ -30,25 +30,33 @@ clear
 echo "Step 8: Install Dependencies"
 sudo apt install -y git python3-pip python3-setuptools python3-wheel python3-dev pkg-config libcairo2-dev gtk-update-icon-cache desktop-file-utils xdg-utils libgirepository1.0-dev gir1.2-gtk-3.0
 clear
-echo "Step 9: Download Wine (Part 2)"
-wget --no-check-certificate "https://onedrive.live.com/download?cid=0D1B2C3D089F7FA0&resid=D1B2C3D089F7FA0%21106&authkey=AAsdS8XcgeXp-_c" -O wine-tkg-staging-fsync-git-6.15.r0.g4b6879f3.tar.xz
+echo "Step 9: Download Wine Source"
+git clone https://github.com/Tk-Glitch/wine-tkg
 clear
-echo "Step 10: Extract Wine (Part 2)"
-tar -xf wine-tkg-staging-fsync-git-6.15.r0.g4b6879f3.tar.xz
+echo "Step 10: Change Directory to wine-tkg"
+cd wine-tkg
 clear
-echo "Step 11: Download Grapejuice"
+echo "Step 11: Configure Source"
+./configure
+clear
+echo "Step 12: MAKE"
+sudo make
+clear
+echo "Step 13: MAKE AN INSTALL"
+sudo make install
+echo "Step 14: Download Grapejuice"
 git clone https://gitlab.com/brinkervii/grapejuice.git
 clear
-echo "Step 12: Change Directory to Grapejuice"
+echo "Step 15: Change Directory to Grapejuice"
 cd grapejuice
 clear
-echo "Step 13: Install Grapejuice"
+echo "Step 16: Install Grapejuice"
 python3 ./install.py
-echo "Step 14: Install Vim"
-sudo apt install vim
+echo "Step 17: Install Vim"
+sudo apt install -y vim
 clear
-echo "Step 15 is manual. You need to put 
-/home/username/wine-tkg-staging-fsync-git-6.15.r0.g4b6879f3/bin/wine between the quotes"
-read
-vim ~/.config/brinkervii/grapejuice/user_settings.json
+echo "Step 18: Add Wine Binary"
+# here's how to change the wine binary automatically using python
+echo 'from grapejuice_common.features import settings; settings.current_settings.set(settings.k_wine_binary, /usr/local/bin/wine")
+settings.current_settings.save()' | python3
 fi
