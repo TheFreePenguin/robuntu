@@ -44,6 +44,7 @@ sudo make
 clear
 echo "Step 13: MAKE AN INSTALL"
 sudo make install
+clear
 echo "Step 14: Download Grapejuice"
 git clone https://gitlab.com/brinkervii/grapejuice.git
 clear
