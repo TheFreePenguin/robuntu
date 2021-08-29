@@ -24,7 +24,7 @@ clear
 echo "Step 6: Install Updates" 
 sudo apt upgrade -y
 clear
-echo "Step 7: Install Wine"
+echo "Step 7: Install Wine-Devel"
 sudo apt install -y --install-recommends winehq-devel
 clear
 echo "Step 8: Install Dependencies"
