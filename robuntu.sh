@@ -24,7 +24,7 @@ clear
 echo "Step 6: Install Updates" 
 sudo apt upgrade -y
 clear
-echo "Step 7: Install Wine-Devel"
+echo "Step 7: Install Wine"
 sudo apt install -y --install-recommends winehq-devel
 clear
 echo "Step 8: Install Dependencies"
@@ -44,7 +44,6 @@ sudo make
 clear
 echo "Step 13: MAKE AN INSTALL"
 sudo make install
-clear
 echo "Step 14: Download Grapejuice"
 git clone https://gitlab.com/brinkervii/grapejuice.git
 clear
@@ -53,11 +52,12 @@ cd grapejuice
 clear
 echo "Step 16: Install Grapejuice"
 python3 ./install.py
+clear
 echo "Step 17: Install Vim"
 sudo apt install -y vim
 clear
 echo "Step 18: Add Wine Binary"
 # here's how to change the wine binary automatically using python
-echo 'from grapejuice_common.features import settings; settings.current_settings.set(settings.k_wine_binary, /usr/local/bin/wine")
+echo 'from grapejuice_common.features import settings; settings.current_settings.set(settings.k_wine_binary, "/usr/local/bin/wine")
 settings.current_settings.save()' | python3
 fi
