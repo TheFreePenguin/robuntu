@@ -1,5 +1,5 @@
 
-echo "Install Roblox (this only works on Ubuntu-based distros) ? [Y/n]"
+echo "Install Roblox (this only works on Ubuntu-based distros that are not Elementary OS since the pancake dev team decided to remove 32bit support) ? [Y/n]"
 read START
 if [ $START = n ]
 then
