@@ -40,27 +40,27 @@ echo "Step 11: Download patch"
 curl https://raw.githubusercontent.com/e666666/robloxWineBuildGuide/main/roblox-wine-staging-v2.patch --output roblox-wine-staging-v2.patch
 echo "Step 12: Apply patch"
 git apply roblox-wine-staging-v2.patch
-echo "Step 11: Configure Source"
+echo "Step 13: Configure Source"
 ./configure
 clear
-echo "Step 12: MAKE"
+echo "Step 14: MAKE"
 sudo make
 clear
-echo "Step 13: MAKE AN INSTALL"
+echo "Step 15: MAKE AN INSTALL"
 sudo make install
 clear
-echo "Step 14: Download Grapejuice"
+echo "Step 16: Download Grapejuice"
 git clone https://gitlab.com/brinkervii/grapejuice.git
 clear
-echo "Step 15: Change Directory to Grapejuice"
+echo "Step 17: Change Directory to Grapejuice"
 cd grapejuice
 clear
-echo "Step 16: Install Grapejuice"
+echo "Step 18: Install Grapejuice"
 python3 ./install.py
-echo "Step 17: Install Vim"
+echo "Step 19: Install Vim"
 sudo apt install -y vim
 clear
-echo "Step 18: Add Wine Binary"
+echo "Step 20: Add Wine Binary"
 # here's how to change the wine binary automatically using python
 echo 'from grapejuice_common.features import settings; settings.current_settings.set(settings.k_wine_binary, /usr/local/bin/wine")
 settings.current_settings.save()' | python3
