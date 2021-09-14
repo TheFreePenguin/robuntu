@@ -28,20 +28,20 @@ echo "Step 7: Install Wine-Devel"
 sudo apt install -y --install-recommends winehq-devel
 clear
 echo "Step 8: Install Dependencies"
-sudo apt install -y git python3-pip python3-setuptools python3-wheel python3-dev pkg-config libcairo2-dev gtk-update-icon-cache desktop-file-utils xdg-utils libgirepository1.0-dev gir1.2-gtk-3.0
+sudo apt install -y git curl python3-pip python3-setuptools python3-wheel python3-dev pkg-config libcairo2-dev gtk-update-icon-cache desktop-file-utils xdg-utils libgirepository1.0-dev gir1.2-gtk-3.0
 clear
 echo "Step 9: Download Wine Source"
 git clone https://github.com/Frogging-Family/wine-tkg-git
 clear
 echo "Step 10: Change Directory to wine-tkg"
-cd wine-tkg
+cd wine-tkg-git
 clear
 echo "Step 11: Download patch"
 curl https://raw.githubusercontent.com/e666666/robloxWineBuildGuide/main/roblox-wine-staging-v2.patch --output roblox-wine-staging-v2.patch
 echo "Step 12: Apply patch"
 git apply roblox-wine-staging-v2.patch
 echo "Step 13: Install Patched Wine"
-cd wine-tkg; ./non-makepkg-build.sh
+cd wine-tkg-git; ./non-makepkg-build.sh
 clear
 echo "Step 14: Download Grapejuice"
 git clone https://gitlab.com/brinkervii/grapejuice.git
