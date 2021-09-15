@@ -28,7 +28,7 @@ echo "Step 7: Install Wine-Devel"
 sudo apt install -y --install-recommends winehq-devel
 clear
 echo "Step 8: Install Dependencies"
-sudo apt install -y git curl python3-pip python3-setuptools python3-wheel python3-dev pkg-config libcairo2-dev gtk-update-icon-cache desktop-file-utils xdg-utils libgirepository1.0-dev gir1.2-gtk-3.0
+sudo apt install -y git autoconf curl python3-pip python3-setuptools python3-wheel python3-dev pkg-config libcairo2-dev gtk-update-icon-cache desktop-file-utils xdg-utils libgirepository1.0-dev gir1.2-gtk-3.0
 clear
 echo "Step 9: Download Wine Source"
 git clone https://github.com/Frogging-Family/wine-tkg-git
